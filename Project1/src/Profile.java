@@ -67,44 +67,40 @@ public class Profile implements Comparable<Profile>{
         Date dob4 = new Date(1, 1, 1995);
 
         // Test case 1: Comparing profiles by last name (Brown vs. Smith)
-        // Since "Brown" is lexicographically smaller than "Smith", the result should be -1
+        // Testing: Since "Brown" is lexicographically smaller than "Smith"
         Profile profile1 = new Profile("Alice", "Brown", dob1);
         Profile profile2 = new Profile("Bob", "Smith", dob2);
         System.out.println("Test case 1 (last name): " + profile1.compareTo(profile2)); // Expected: -1
 
         // Test case 2: Same last name, different first names (Alice vs. Bob)
-        // Since the last names are the same, it compares the first names.
-        // "Alice" is lexicographically smaller than "Bob", so the result should be -1.
+        // Testing: Since the last names are the same, it compares the first names. "Alice" is lexicographically smaller than "Bob"
         Profile profile3 = new Profile("Alice", "Smith", dob1);
         Profile profile4 = new Profile("Bob", "Smith", dob2);
         System.out.println("Test case 2 (first name): " + profile3.compareTo(profile4)); // Expected: -1
 
         // Test case 3: Same first and last names, different date of birth (1985 vs. 1990)
-        // Since both the last and first names are the same, it compares the date of birth.
-        // 1985 is earlier than 1990, so the result should be -1.
+        // Testing: Since both the last and first names are the same, it compares the date of birth. 1985 is earlier than 1990
         Profile profile5 = new Profile("Alice", "Smith", dob3);
         System.out.println("Test case 3 (earlier dob): " + profile5.compareTo(profile3)); // Expected: -1
 
-       // Test case 4: Comparing profiles by last name (Smith vs. Brown)
-        // Since "Smith" is lexicographically greater than "Brown", so the result should be 1.
+        // Test case 4: Comparing profiles by last name (Smith vs. Brown)
+        // Testing:  "Smith" is lexicographically greater than "Brown"
         Profile profile6 = new Profile("Bob", "Smith", dob1);
         System.out.println("Test case 4 (last name): " + profile6.compareTo(profile1)); // Expected: 1
 
         // Test case 5: Same last name, different first names (Bob vs. Alice)
-        // Since the last names are the same, it compares the first names.
-        // "Bob" is lexicographically greater than "Alice", so the result should be 1.
+        // Testing: Since the last names are the same, it compares the first names. Bob" is lexicographically greater than "Alice"
         Profile profile7 = new Profile("Bob", "Smith", dob1);
         Profile profile8 = new Profile("Alice", "Smith", dob1);
         System.out.println("Test case 5 (first name): " + profile7.compareTo(profile8)); // Expected: 1
 
         // Test case 6: Testing date of birth comparison.
-        // Last name and first name are the same, so compare dates of birth.
-        // 1995 is later than 1990, so compareTo should return 1.
+        // Testing: Last name and first name are the same, so compare dates of birth. 1995 is later than 1990
         Profile profile9 = new Profile("Alice", "Smith", dob4);
         System.out.println("Test case 6 (later dob): " + profile9.compareTo(profile3)); // Expected: 1
 
         // Test case 7: Testing identical profiles.
-        // Both last names, first names, and dates of birth are the same, so compareTo should return 0.        
+        // Testing: Both last names, first names, and dates of birth are the same     
         Profile profile10 = new Profile("Alice", "Smith", dob1);
         Profile profile11 = new Profile("Alice", "Smith", dob1);
         System.out.println("Test case 7 (same profile): " + profile10.compareTo(profile11)); // Expected: 0
