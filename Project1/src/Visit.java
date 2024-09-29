@@ -31,5 +31,12 @@ public class Visit {
         return VisitRunenr;
     }
 
-   
+    public static void main(String[] args) {
+        //Create test data
+        Appointment appointment1 = new Appointment(new Date(11, 21, 2024), Timeslot.SLOT1, new Profile("John", "Doe", new Date(1, 1, 1990)), Provider.PATEL);
+        Visit visit = new Visit(appointment1);
+
+        //Test case 1: Retrieve current appointment in visit
+        System.out.println("Test case 1: " + visit.getCurrentAppointment().getDate()); // Expected: 11/21/2024
+    }
 } 
